@@ -1,0 +1,142 @@
+/* ---------- Colour palette (change these to restyle the whole app) ---------- */
+:root {
+  --pink-50: #fff5f8;
+  --pink-100: #ffe3ec;
+  --pink-300: #f7a8c4;
+  --pink-500: #e8629b;
+  --pink-600: #d14a86;
+  --lavender: #e9defa;
+  --text: #4a3340;
+  --muted: #9a7f8d;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg, var(--pink-50), var(--lavender));
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.9rem;
+  text-align: center;
+  color: var(--pink-600);
+  margin: 0.5rem 0 1.5rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 20px rgba(209, 74, 134, 0.12);
+}
+
+/* ---------- Form ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 1rem;
+  font-family: inherit;
+  font-size: 16px; /* 16px stops iPhones zooming in when you tap the box */
+  color: var(--text);
+  background: var(--pink-50);
+  border: 2px solid var(--pink-100);
+  border-radius: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--pink-300);
+}
+
+/* ---------- Buttons ---------- */
+button {
+  min-height: 48px; /* big enough to tap with a thumb */
+  padding: 0 1.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  width: 100%;
+  color: white;
+  background: linear-gradient(135deg, var(--pink-300), var(--pink-500));
+  box-shadow: 0 6px 16px rgba(232, 98, 155, 0.35);
+}
+
+.btn-secondary {
+  color: var(--pink-600);
+  background: var(--pink-100);
+}
+
+/* ---------- Closet list ---------- */
+#closet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#closet-list li {
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.5rem;
+  background: var(--pink-50);
+  border-radius: 12px;
+}
+
+/* ---------- Outfit result ---------- */
+#outfit {
+  margin-top: 1rem;
+}
+
+#outfit p {
+  margin: 0 0 0.5rem;
+  padding: 1rem;
+  background: white;
+  border-left: 5px solid var(--pink-500);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(209, 74, 134, 0.1);
+}
+
+/* ---------- Bigger screens ---------- */
+@media (min-width: 600px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Jordy's Closet</title>
+</head>
+<body>
+   <main class="app">
+    <h1>Jordy's Closet</h1>
+
+   <section class="card">
+    <h2>Add a clothing item</h2>
+    <form id="item-form">
+        <input type="text" id="item-name" placeholder="e.g. Blue denim jacket" required>
+        <select id="item-category">
+            <option value="top">Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="shoes">Shoes</option>
+        </select>
+        <button type="submit">Add item</button>
+    </form>
+   </section>
+
+   <section class="card">
+    <h2>My Closet</h2>
+    <ul id="closet-list"></ul>
+   </section>
+
+    <button id="generate-btn" class="btn-primary">Generate outfit</button>
+    <div id="outfit"></div>
+   </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
