@@ -3,7 +3,7 @@
   --pink-50: #fff5f8;
   --pink-100: #ffe3ec;
   --pink-300: #f7a8c4;
-  --pink-500: #e8629b;
+  --pink-500: #e8aac9;
   --pink-600: #d14a86;
   --lavender: #e9defa;
   --text: #4a3340;
@@ -66,7 +66,7 @@ select {
   font-family: inherit;
   font-size: 16px; /* 16px stops iPhones zooming in when you tap the box */
   color: var(--text);
-  background: var(--pink-50);
+  background: var(--gray-50);
   border: 2px solid var(--pink-100);
   border-radius: 14px;
 }
@@ -139,4 +139,20 @@ button:active {
   h1 {
     font-size: 2.4rem;
   }
+}
+
+#closet-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-delete {
+  width: 36px;
+  min-height: 36px;
+  padding: 0;
+  color: var(--pink-600);
+  background: var(--pink-50);
+  border-radius: 50%;
+  flex-shrink: 0;
 }

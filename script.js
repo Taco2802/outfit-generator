@@ -8,12 +8,36 @@ const outfitDiv = document.getElementById("outfit");
 
 let items = JSON.parse(localStorage.getItem("items")) || [];
 
+function saveItems() {
+  localStorage.setItem("items", JSON.stringify(items));
+}
+
+function deleteItem(index) {
+  items.splice(index, 1);
+  saveItems();
+  renderCloset();
+}
+
 // ---------- Piece B: show the closet ----------
 function renderCloset() {
   closetList.innerHTML = "";
-  items.forEach(function (item) {
+
+  items.forEach(function (item, index) {
     const li = document.createElement("li");
-    li.textContent = item.name + " (" + item.category + ")";
+
+    const label = document.createElement("span");
+    label.textContent = item.name + " (" + item.category + ")";
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "✕";
+    deleteBtn.className = "btn-delete";
+    deleteBtn.setAttribute("aria-label", "Delete " + item.name);
+    deleteBtn.addEventListener("click", function () {
+      deleteItem(index);
+    });
+
+    li.appendChild(label);
+    li.appendChild(deleteBtn);
     closetList.appendChild(li);
   });
 }
@@ -30,7 +54,7 @@ form.addEventListener("submit", function (event) {
   };
 
   items.push(newItem);
-  localStorage.setItem("items", JSON.stringify(items));
+  saveItems();
 
   renderCloset();
   form.reset();
